@@ -9,6 +9,18 @@ const game = {
       (this.biggestNum - this.smallestNum + 1)) + this.smallestNum
   },
   getGuess: function (){
-    
+    let guess 
+    do {
+      guess = parseInt(
+        prompt(
+          'Enter a guess between ${this.smallestNum} and ${this.biggestNum}'
+        )
+      )
+    }while (
+      isNaN(guess) ||
+      guess < this.smallestNum ||
+      guess > this.biggestNum
+    )
+    return guess
   }
 }
